@@ -8,12 +8,17 @@ public class App
     public static void main( String[] args ){
        ApplicationContext context = new ClassPathXmlApplicationContext("com/essendant/spring/tutorial/SpringTutorial/beans/beans.xml");
     	Person person = (Person)context.getBean("person");
-    	person.speak();
+    	//Person person2 = (Person)context.getBean("person");
     	
-    	Address address = (Address)context.getBean("address");
-    	System.out.println(address);
+    	person.setTaxId(666);
     	
     	System.out.println(person);
+//    	person.speak();
+//    	
+//    	Address address = (Address)context.getBean("address");
+//    	System.out.println(address);
+//    	
+//    	System.out.println(person);
     	
     	((ClassPathXmlApplicationContext)context).close();
     }
